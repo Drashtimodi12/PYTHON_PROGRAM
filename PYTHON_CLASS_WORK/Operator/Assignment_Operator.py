@@ -1,16 +1,9 @@
-# Assignment Operator:- =, =+, =-, =*, =/, =%, =**, =//
-
-
-a = 10
-print(a)
-
-a = a+20
-a += 20
-print(a)
+# Assignment Operators: =, +=, -=, *=, /=, %=, **=, //=
 
 a = 10  # Assign value 10 to a
 print(a)  # Output: 10
 
+a = a + 5
 a += 5  # Equivalent to a = a + 5
 print(a)  # Output: 15
 

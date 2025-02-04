@@ -1,5 +1,6 @@
 # Print with raw string (r prefix ignores escape sequences)
-print(r"python is \" oops lang.")   # Output: python is " oops lang.
+print(r"python is \" oops lang.")   # backslashes (\) are treated as literal characters.
+# Output: python is " oops lang.
 
 name = input("Enter name : ")   # User enters a name
 print(name)     # Output: User input name
@@ -12,7 +13,8 @@ print(a+b)      # Addition of two numbers
 print(int(a)+int(b))    # Another way of addition (redundant type conversion)
 
 # Type conversion example
-a = "100O"  # String containing invalid integer
+a = "100"
+# a = "100O"  # String containing invalid integer
 # b = int(a)  # This will raise a ValueError since "100O" is not a valid integer
 print(type(a))  # Output: <class 'str'>
 # print(type(b))  # This line will not execute due to the error above
