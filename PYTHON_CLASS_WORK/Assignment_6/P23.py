@@ -7,4 +7,4 @@ a = 'Hello, world!'
 # sliced_string = a[1:]  # Starts from index 1 (second character) till the end
 
 # Print the sliced string
-print('The sliced string is:', a[1:])
+print('The sliced string is:', a[1:]) 

@@ -7,4 +7,4 @@ list1 = ['Apple', 'Banana', 'Mango']
 for i in list1 :
     if i == 'Banana' :
         break  # Stop the loop once 'Banana' is found    
-    print(i)
+    print(i) 

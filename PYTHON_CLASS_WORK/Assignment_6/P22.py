@@ -7,4 +7,4 @@ a = 'Hello'
 # first_char = a[0]
 
 # Print the first character
-print('The first character of string is: ',a[0])
+print('The first character of string is: ',a[0]) 

@@ -4,4 +4,4 @@
 a = 'Hello World!'
 
 # Access and print the string from the last character using negative indexing
-print('The string from the last character is: ', a[::-1])
+print('The string from the last character is: ', a[::-1]) 

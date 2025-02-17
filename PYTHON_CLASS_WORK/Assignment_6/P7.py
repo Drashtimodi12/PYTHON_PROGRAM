@@ -22,4 +22,4 @@ print('Age:', age)
 
 # Use map() to convert multiple inputs into integers or floats.
 a, b, c = map(int, input('Enter three numbers: ').split())
-print('Sum:', a + b + c)
+print('Sum:', a + b + c) 

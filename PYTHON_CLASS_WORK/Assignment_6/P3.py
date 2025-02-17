@@ -10,4 +10,4 @@ num2 = 20
 sum_result = num1 + num2    # Adding two numbers
 
 # Display the result
-print('The sum of', num1, 'and', num2, 'is =', sum_result)  
+print('The sum of', num1, 'and', num2, 'is =', sum_result)    

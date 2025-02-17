@@ -15,5 +15,5 @@ else:
 
 # 4. Loops: Printing numbers from 1 to 5 using a for loop       Loop (for i in range(1, 6)) prints numbers from 1 to 5.
 print('Counting: ')
-for i in range(1, 6):  
+for i in range(1, 6):   
     print(i)

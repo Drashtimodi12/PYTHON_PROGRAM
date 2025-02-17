@@ -11,7 +11,7 @@ for i in list1:
         found = True
         break
 
-# Output the result
+# Output the result 
 if found:
     print(f"{search_string} is found in the list.")
 else:

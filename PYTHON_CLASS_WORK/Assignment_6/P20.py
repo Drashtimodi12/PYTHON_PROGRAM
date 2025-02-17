@@ -4,4 +4,4 @@
 a = 'This is a string stored in a variable.'
 
 # Print the variable
-print(a)
+print(a) 

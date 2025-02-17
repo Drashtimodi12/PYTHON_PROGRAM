@@ -46,5 +46,5 @@ print('Colors:', colors)
 # Dictionary (key-value pairs)
 info = {'city': 'Surat', 'country': 'India'}  
 print('City:', info['city'])
-print('Country:', info['country'])
+print('Country:', info['country'])  
 print('Data type of info:', type(info))

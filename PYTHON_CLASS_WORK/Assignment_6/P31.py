@@ -13,7 +13,7 @@ print("Uppercase text:", text.upper())  # Output: Uppercase text:   HELLO, PYTHO
 print("Lowercase text:", text.lower())      # Output: Lowercase text:   hello, python world!
 
 # replace(old, new): Replaces all occurrences of old with new.
-print("Replaced text:", text.replace("Python", "Java"))     # Output: Replaced text:   Hello, Java World!
+print("Replaced text:", text.replace("Python", "Java"))     # Output: Replaced text:   Hello, Java World! 
 
 # split(): Splits the string into a list of words.
 print("Splitted text:", text.split())       # Output: Splitted text: ['Hello,', 'Python', 'World!']

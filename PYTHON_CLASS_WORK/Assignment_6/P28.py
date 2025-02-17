@@ -7,4 +7,4 @@ list1 = ['Apple', 'Banana', 'Mango']
 for i in list1 :
     if i == 'Banana' :
         continue     # Skip 'banana' and move to the next item
-    print(i)
+    print(i) 

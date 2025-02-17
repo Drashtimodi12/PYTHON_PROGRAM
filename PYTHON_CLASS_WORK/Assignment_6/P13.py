@@ -1,6 +1,5 @@
-# 13.	Write a Python program to print each fruit in a list using a simple for loop. List1 = ['apple', 'banana', 'mango']
+# 13.	Write a Python program to print each fruit in a list using a simple for loop. List1 = ['apple', 'banana', 'mango'].
 
-# Define the list
 list1 = ['Apple', 'Banana', 'Mango']
 
 # Loop through the list and print each fruit
