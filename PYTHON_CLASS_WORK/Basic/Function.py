@@ -1,29 +1,38 @@
 # Print with raw string (r prefix ignores escape sequences)
-print(r"python is \" oops lang.")   # backslashes (\) are treated as literal characters.
-# Output: python is " oops lang.
+print(r"python is \" oops lang.")   
+# The 'r' prefix treats backslashes (\) as literal characters.
+# Output: python is \" oops lang.
 
+
+# Taking string input
 name = input("Enter name : ")   # User enters a name
-print(name)     # Output: User input name
+print(name)  # Prints the entered name
+
 
 # Taking integer input
-a =int(input("enter number 1: "))   # Convert input to integer
-b =int(input("enter number 2: "))    # Convert input to integer
+a = int(input("Enter number 1: "))  # Convert user input to an integer
+b = int(input("Enter number 2: "))  # Convert user input to an integer
 
-print(a+b)      # Addition of two numbers
-print(int(a)+int(b))    # Another way of addition (redundant type conversion)
+print(a + b)  # Adds two numbers and prints the result
+print(int(a) + int(b))  # Another way of addition (redundant type conversion)
 
-# Type conversion example
-a = "100"
-# a = "100O"  # String containing invalid integer
-# b = int(a)  # This will raise a ValueError since "100O" is not a valid integer
-print(type(a))  # Output: <class 'str'>
-# print(type(b))  # This line will not execute due to the error above
+
+# # Type conversion example
+# c = "100"  # String value
+# # d = "100O"  # Invalid integer (contains letter 'O')
+# # e = int(a)  # This would raise a ValueError since "100O" is not a valid integer
+
+# print(type(c))  # Output: <class 'str'>
+# # print(type(d))  # This line will not execute due to the error above
+
 
 # String split example
-name = "Tops technologies pvt ltd".split()  # Splitting string into list
+name = "Tops technologies pvt ltd".split()      # Splitting the string into a list based on spaces
 print(name)     # Output: ['Tops', 'technologies', 'pvt', 'ltd']
-name = "Tops technologies pvt ltd".split("o")  # Splitting string into list
+
+name = "Tops technologies pvt ltd".split("o")   # Splitting the string where the letter 'o' appears
 print(name)     # Output: ['T', 'ps techn', 'l', 'gies pvt ltd']
+
 
 # String formatting example
 fname = "Farukh"

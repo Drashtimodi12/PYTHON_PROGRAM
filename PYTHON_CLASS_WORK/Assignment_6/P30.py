@@ -1,0 +1,1 @@
+# 30.	Write a Python program to demonstrate string slicing.
