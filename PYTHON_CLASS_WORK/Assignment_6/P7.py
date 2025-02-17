@@ -16,11 +16,10 @@ height = float(input('Enter your height: '))
 print('Your height is: ', height, 'Meters')
 
 # You can take multiple inputs in a single line using split().
-name, age = input("Enter your name and age (separated by space): ").split()
-print("Name:", name)
-print("Age:", age)
+name, age = input('Enter your name and age (separated by space): ').split()
+print('Name:', name)
+print('Age:', age)
 
 # Use map() to convert multiple inputs into integers or floats.
-a, b, c = map(int, input("Enter three numbers: ").split())
-print("Sum:", a + b + c)
-
+a, b, c = map(int, input('Enter three numbers: ').split())
+print('Sum:', a + b + c)

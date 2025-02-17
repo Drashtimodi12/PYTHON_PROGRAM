@@ -9,6 +9,6 @@ if age >= 18 :      # First check: if age is 18 or older
     if weight >= 50 :       # Nested check: if weight is 50 kg or more
         print('You are eligible to donate blood.')
     else :
-        print("You must weigh at least 50 kg to donate blood.")
+        print('You must weigh at least 50 kg to donate blood.')
 else :
-    print("You must be at least 18 years old to donate blood.")
+    print('You must be at least 18 years old to donate blood.')

@@ -1,5 +1,6 @@
 # 15.	Write a Python program to find a specific string in the list using a simple for loop and if condition.
 
+# Define the list
 list1 = ['Apple', 'Banana', 'Mango']
 search_string = input("Enter the string to search for: ")
 

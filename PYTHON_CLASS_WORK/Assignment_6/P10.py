@@ -14,6 +14,6 @@ for i in range(2, num):
 
 # After the loop, check the flag value
 if flag == 0:  
-    print(f"The number {num} is prime.")     # If flag is still 0, the number is prime
+    print(f'The number {num} is prime.')     # If flag is still 0, the number is prime
 else:  
-     print(f"The number {num} is not prime.")  # If flag is 1, the number is not prime
+     print(f'The number {num} is not prime.')  # If flag is 1, the number is not prime

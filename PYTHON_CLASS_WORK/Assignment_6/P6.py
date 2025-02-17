@@ -40,11 +40,11 @@ print('Hobbies: ', hobbies)
 print('Data type of Hobbies: ', type(hobbies))
 
 # Tuple (like a list but cannot be changed)
-colors = ("red", "blue", "green")
-print("Colors:", colors)
+colors = ('red', 'blue', 'green')
+print('Colors:', colors)
 
 # Dictionary (key-value pairs)
-info = {"city": "Surat", "country": "India"}  
-print("City:", info["city"])
-print("Country:", info["country"])
-print("Data type of info:", type(info))
+info = {'city': 'Surat', 'country': 'India'}  
+print('City:', info['city'])
+print('Country:', info['country'])
+print('Data type of info:', type(info))
