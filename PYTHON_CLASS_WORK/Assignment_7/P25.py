@@ -1,0 +1,1 @@
+# 25.	Write a Python program to create a dictionary of 6 key-value pairs.
