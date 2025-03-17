@@ -8,7 +8,7 @@ print(b)        # Output:
 
 
 # Converting tuple to list, modifying it, and converting back to tuple
-l = list(t)  # Convert tuple to list
+l = list(fruits)  # Convert tuple to list
 l.append("SQL")  # Add an element
 t = tuple(l)  # Convert back to tuple
 print("Modified Tuple:", t)

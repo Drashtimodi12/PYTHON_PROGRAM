@@ -21,3 +21,21 @@ mytuple = ("apple", "banana", "cherry", "kiwi", "mango", "orange")
 if "mango" in mytuple :
     print("Yes, 'apple' is in the frutis tuple.")
 # Output: Yes, 'apple' is in the frutis tuple.
+
+
+
+
+# tuple[start:end:step] --- Extracts elements from start to end-1, skipping step elements.
+
+# Index   0       1        2       3        4
+#        "apple" "banana" "mango" "orange" "kiwi"
+
+# mytuple[1:5:2]
+# Start at index 1 → "banana"
+# Skip 1 element (step=2) → Next element included is at index 3 → "orange"
+# Stop before index 5, so "kiwi" (index 4) is not included.
+# Selected elements: ('banana', 'orange')
+mytuple = ("apple", "banana", "mango", "orange", "kiwi")
+
+# Access alternate elements using slicing with step 2
+print(mytuple[1:5:2])             # Output: ('banana', 'orange')
