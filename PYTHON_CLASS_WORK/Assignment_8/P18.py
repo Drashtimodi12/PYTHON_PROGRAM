@@ -1,0 +1,1 @@
+# 18.	Write a Python program to create a class and access its properties using an object. 

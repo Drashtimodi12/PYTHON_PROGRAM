@@ -1,0 +1,4 @@
+Aggregation is a concept in object-oriented programming where one class is used as a part of another class but 
+still exists independently. It represents a "has-a" relationship, where one class contains a reference to another 
+class. The lifetime of the contained object is not strictly dependent on the lifetime of the container object. 
+This means that the contained object can exist independently of the container object.

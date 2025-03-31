@@ -46,3 +46,10 @@ file.close()  # Close file
 # Output: 
 # Test.txt ---File Read and Print as a List
 # ['Python Program\n', 'Java Program\n']
+
+
+# Open the file "BG_12.jpg" in binary read mode ('rb')
+with open("BG_12.jpg",'rb') as f:
+    dt = f.read()   # Read the content of the file into the variable 'dt'
+    print(dt)        # Print the binary content of the file (which will appear as a sequence of bytes)
+# The program will likely fail or return incorrect data, because image files contain non-text characters.

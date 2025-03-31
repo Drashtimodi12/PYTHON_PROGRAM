@@ -1,0 +1,14 @@
+Dunder methods (short for "double underscore" methods), also known as magic methods or special methods, are predefined 
+methods in Python that have double underscores at the beginning and end of their names. These methods are used to 
+emulate the behavior of built-in types and to define the behavior of custom objects in different contexts.
+These methods automate certain behaviors and allow customization of built-in operations.
+
+Some common dunder methods include:
+
+__init__(self, ...):    Constructor method, called when an instance of a class is created.
+__str__(self):  Called by the str() function and print statement to get a string representation of the object.
+__repr__(self):     Called by the repr() function and in the interactive interpreter to get a string representation 
+                    of the object that can be used to recreate the object.
+__len__(self):  	Returns the length of the object
+__add__(self, other):   Defines behavior for the addition operator +.
+__eq__(self, other):    Defines behavior for the equality operator ==.

@@ -1,0 +1,12 @@
+# Inheritance is an OOP concept where a child class inherits attributes and methods from a parent class. 
+This helps in code reusability and modularity.
+
+
+# Python supports 5 types of inheritance:
+
+Single Inheritance
+Multiple Inheritance
+Multilevel Inheritance
+Hierarchical Inheritance
+Hybrid Inheritance
+
