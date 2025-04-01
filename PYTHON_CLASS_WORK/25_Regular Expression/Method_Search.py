@@ -1,4 +1,5 @@
-# 34.	Write a Python program to search for a word in a string using re.search(). 
+# The re.search method in Python's re module is used to search for a pattern anywhere in the string. 
+# If the pattern is found, it returns a match object; otherwise, it returns None.
 
 import re  # The re module provides support for regular expressions in Python.
 

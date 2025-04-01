@@ -1,4 +1,5 @@
-# 37.	Write a Python program to match a word in a string using re.match(). 
+# The re.match method in Python's re module is used to check if the beginning of a string matches a specified regular expression pattern. 
+# If the pattern matches the beginning of the string, it returns a match object; otherwise, it returns None.
 
 import re  # The re module provides support for regular expressions in Python.
 
@@ -6,6 +7,8 @@ text = "Rany is 2345 And Jeny is 65"
 
 # Match "Rany" at the beginning of the text
 data = re.match("Rany", text)
+print(data)
+# Output: <re.Match object; span=(0, 4), match='Rany'>
 
 # Check if a match is found
 if data:
