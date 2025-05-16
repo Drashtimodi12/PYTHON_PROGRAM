@@ -1,0 +1,94 @@
+--------------------Setup PythonDjango Project---------------------------------
+
+STEP 1:- Create Main Folder
+        DjangoProject
+
+STEP 2:- Go to Terminal
+        ctrl + ~
+
+STEP 3:- Create Virtual Environment with name
+        py -m venv my env
+
+STEP 4:- Activate the Virtual Environment
+        .\myenv\Scripts\Activate
+
+STEP 5:- Install Django
+        pip Install Django
+
+STEP 6:- Create a new Django Project
+        py -m django startproject ProjectName .
+
+# STEP 7:- Navigate to the Project Folder
+        # cd .\ProjectName\
+
+STEP 8:- Create a Django App
+        py -m django startapp AppName
+
+STEP 9:- Add the App to Settings File
+        Main Folder -> ProjectName -> Project -> Settings.py -> INSTALLED_APPS -> 'AppName'
+
+STEP 10:- Copy urls.py for AppName
+        Main Folder -> ProjectName -> Project -> Copy urls.py -> Paste On -> AppName -> urls.py
+
+STEP 11:- Changes in Project urls.py
+            from django.contrib import admin
+            from django.urls import path, include
+
+            urlpatterns = [
+                path('admin/', admin.site.urls),
+                path('',include("myapp.urls"))
+            ]
+
+STEP 12:- Changes in AppName urls.py
+            from django.contrib import admin
+            from django.urls import path
+            from myapp.views import *
+
+            urlpatterns = [
+                path('',home,name='home')
+            ]
+
+STEP 13:- Create templates folder for html File
+        Main Folder -> ProjectName -> AppName -> Create Folder templates
+
+STEP 14:- Create Static Folder for CSS, IMG, JS
+        Main Folder -> ProjectName -> Create Folder Static
+
+STEP 15:- Run Makemigrations. It's like creating blueprint for database changes
+        py .\manage.py makemigrations
+
+STEP 16:- Run Migrate. This actually applies changes to the Datatbase.
+        py .\manage.py Migrate
+
+STEP 17:- Create an admin (superuser) account
+        py .\manage.py createsuperuser
+
+STEP 18:- Define Models(Creat Table) 
+        Main Folder -> ProjectName -> AppName -> models.py -> Create Tables
+
+
+
+
+
+--------------------Useful Extra Command and Description---------------------------------
+
+1. Lists all migrations and their applied status
+py .\manage.py showmigrations	
+
+2. Shows raw SQL for a specific migration
+py .\manage.py sqlmigrate myapp 0001	
+
+3. Marks migration as done without applying changes
+py .\manage.py migrate --fake	
+
+4. Rolls back all migrations for that app
+py .\manage.py migrate myapp zero	
+
+5. Launches interactive shell with Django project loaded. Test queries, debug, create test data, run logic.
+py .\manage.py shell
+
+6. changepassword username	Change the password for a user
+py .\manage.py changepassword username
+
+7. Collect all static files into one directory (for production)
+py .\manage.py collectstatic
