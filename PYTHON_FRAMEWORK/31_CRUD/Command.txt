@@ -1,0 +1,62 @@
+PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\31_CRUD> py -m venv myenv
+PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\31_CRUD> .\myenv\Scripts\activate
+(myenv) PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\31_CRUD> pip install django
+Collecting django
+  Using cached django-5.2.1-py3-none-any.whl (8.3 MB)
+Collecting tzdata
+  Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+Collecting asgiref>=3.8.1
+  Using cached asgiref-3.8.1-py3-none-any.whl (23 kB)
+Collecting typing-extensions>=4
+  Using cached typing_extensions-4.13.2-py3-none-any.whl (45 kB)
+Installing collected packages: tzdata, typing-extensions, sqlparse, asgiref, django
+Successfully installed asgiref-3.8.1 django-5.2.1 sqlparse-0.5.3 typing-extensions-4.13.2 tzdata-2025.2
+
+[notice] A new release of pip available: 22.2.2 -> 25.1.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(myenv) PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\31_CRUD> pip install faker
+Collecting faker
+  Using cached faker-37.3.0-py3-none-any.whl (1.9 MB)
+Requirement already satisfied: tzdata in c:\python_program\python_framework\31_crud\myenv\lib\site-packages (from faker) (2025.2)
+Installing collected packages: faker
+Successfully installed faker-37.3.0
+
+[notice] A new release of pip available: 22.2.2 -> 25.1.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(myenv) PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\31_CRUD> py -m django startproject CRUDProject .
+(myenv) PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\31_CRUD> py .\manage.py startapp myapp
+(myenv) PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\31_CRUD> py .\manage.py makemigrations
+No changes detected
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+(myenv) PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\31_CRUD> py .\manage.py createsuperuser
+Username (leave blank to use 'hp'): admin
+Email address: admin@gmail.com 
+Error: Enter a valid email address.
+Email address: admin@gmail.com
+Password: 
+Password (again):
+The password is too similar to the username.
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
