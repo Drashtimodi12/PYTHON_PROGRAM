@@ -1,5 +1,5 @@
 """
-URL configuration for CRUDProject project.
+URL configuration for Project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -20,4 +20,5 @@ from myapp.views import *
 
 urlpatterns = [
     path('', index, name='index'),
+    path('register/', register, name='register'),
 ]
