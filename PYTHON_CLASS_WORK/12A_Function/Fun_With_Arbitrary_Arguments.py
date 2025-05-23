@@ -4,7 +4,7 @@
 
 def load(*a) :           # *a collects all arguments into a tuple
     total = 0            # Initialize total sum to 0
-    for i  in a :        # Iterate through each value in the tuple
+    for i in a :         # Iterate through each value in the tuple
         total += i       # Add the value to total
     print(total)         # Print the final sum
 

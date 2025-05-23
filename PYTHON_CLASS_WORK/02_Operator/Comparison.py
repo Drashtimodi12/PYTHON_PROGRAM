@@ -1,4 +1,4 @@
-#  Comparison Operator: ==, =!, >, <, >=, <=
+#  Comparison Operator: ==, !=, >, <, >=, <=
 
 a = 10
 b = 5

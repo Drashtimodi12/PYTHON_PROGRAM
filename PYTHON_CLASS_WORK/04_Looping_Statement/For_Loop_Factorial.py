@@ -8,3 +8,4 @@ for i in range(number, 0, -1):  # Loop from number to 1
 
 # Using f-string
 print(f"Factorial of {number} is {fact}")
+

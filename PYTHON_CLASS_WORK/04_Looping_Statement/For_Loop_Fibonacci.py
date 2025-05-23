@@ -13,3 +13,4 @@ for i in range(length - 2):  # Loop should run (length-2) times
     print(c, end=" ")
     a = b   # Update a and b
     b = c   # Update b and c
+

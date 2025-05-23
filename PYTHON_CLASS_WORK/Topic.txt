@@ -1,0 +1,5 @@
+Python fundamentals - collection, strings;              
+function modules, lambda, functions, files handling;                  
+OOps concept;          
+Django;                      
+DRF
