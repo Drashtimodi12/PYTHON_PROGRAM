@@ -15,6 +15,7 @@ STEP 4:- Activate the Virtual Environment
 STEP 5:- Install Django
         pip Install Django
 	pip install faker
+        pip install djangorestframework
 
 STEP 6:- Create a new Django Project
         py -m django startproject ProjectName .
