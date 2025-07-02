@@ -48,7 +48,7 @@ print(s1)       # Output: {'saree', '87', '64', 'coatset', 'kurta', '200'}
 
 
 
-# 3.    Intersection:- Keep ONLY the duplicates. We can also us ewith different data types.
+# 3.    Intersection:- Keep ONLY the duplicates. We can also use with different data types.
 # The intersection() method returns a new set containing elements common to both sets. 
 set1 = {"apple", "banana", "cherry"}
 set2 = {"google", "microsoft", "apple"}
@@ -68,7 +68,7 @@ set3 = set1 & set2
 print(set3)     # Output: {'apple'}
 
 
-# 4.    The intersection_update() method modifies the original set to keep only common elements. We can also us ewith different data types.
+# 4.    The intersection_update() method modifies the original set to keep only common elements. We can also use with different data types.
 # The intersection_update() method will also keep ONLY the duplicates, but it will change the original set instead of returning a new set.
 set1 = {"apple", "banana", "cherry"}
 set2 = {"google", "microsoft", "apple"}

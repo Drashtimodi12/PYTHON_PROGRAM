@@ -7,7 +7,7 @@ class Animal :
 
 
 # Child class inheriting from Animal
-class  Dog(Animal) :
+class Dog(Animal) :
     def Bark(self) :
         print("Dog Barks.")
 

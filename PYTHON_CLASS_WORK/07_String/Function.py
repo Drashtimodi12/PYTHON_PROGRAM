@@ -9,7 +9,7 @@ print(words.casefold())  # Output: "sun rises in east"
 # Returns the total number of characters in the string, including spaces
 print(len(words))  # Output: 18
 
-# Centers the string in a field of width 19, padding it with '*'
+# Centers the string in a field of width 27, padding it with '*'
 print(words.center(27, '*'))  # Output: "*sun Rises in east*"
 
 # Counts the occurrences of 's' in the substring from index 0 to 7

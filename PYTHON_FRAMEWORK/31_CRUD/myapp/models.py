@@ -7,3 +7,8 @@ class student(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=15)
     age = models.PositiveIntegerField()
+    image = models.ImageField(upload_to='StuProfile', null=True)
+
+    def __str__(self):
+        return self.name
+    

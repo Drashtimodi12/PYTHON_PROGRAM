@@ -5,7 +5,6 @@
 a = 20      # Global Variable
 
 def test() :
-    # global a       # Uncomment this line to modify the global variable
     a = 50
     a += 20
     print(a)        # Output: 70 (local scope)

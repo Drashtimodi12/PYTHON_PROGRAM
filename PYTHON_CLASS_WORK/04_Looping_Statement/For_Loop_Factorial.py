@@ -9,3 +9,6 @@ for i in range(number, 0, -1):  # Loop from number to 1
 # Using f-string
 print(f"Factorial of {number} is {fact}")
 
+# Output:
+# Enter a number: 5
+# Factorial of 5 is 120

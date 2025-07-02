@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <hr>
+    <!-- Display success or error message passed from Django view -->
+    {{message}}
+
+    <!-- 
+    Registration Form:
+    - Sends form data to the 'register' URL.
+    - Uses POST method to securely send data.
+    - Includes 'enctype="multipart/form-data"' to allow file uploads (currently required only if you're uploading files like images).
+    -->
+    <form action="{% url 'register' %}" method="POST" enctype="multipart/form-data">
+    
+        <!-- CSRF token for security to prevent Cross-Site Request Forgery attacks -->
+        {% csrf_token %}    
+
+        <input type="hidden" name="stid" value="{{Student.id}}">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name" value="{{Student.name}}" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{Student.email}}" required>
+        <br><br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" value="{{Student.phone}}" required>
+        <br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="{{Student.age}}" required>
+        <br><br>
+        <label for="img">Image</label>
+        <input type="file" name="file">
+        <br><br>
+        <input type="Submit" value="Submit">
+        <input type="reset" value="Reset">
+        <br><br>
+        {% comment %} <!-- Display success or error message passed from Django view -->
+        {{message}} {% endcomment %}
+    </form>
+    <br>
+
+    <h1>Student Details</h1>
+    <table border="1" cellpadding="5">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>Age</td>
+            <td>Image</td>
+            <td colspan="2">Action</td>
+        </tr>
+        {%for student in students%}
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.phone }}</td>
+            <td>{{ student.age }}</td>
+            <td><img src="media/{{ student.image }}" alt="{{ student.image }}" width="100px" height="100px"></td>
+            <td><a href="{% url 'update' %}?stid={{ student.id }}">Update</a></td>
+            <td><a href="{% url 'delete' %}?stid={{ student.id }}">Delete</a></td> 
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
