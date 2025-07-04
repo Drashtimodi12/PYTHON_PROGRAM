@@ -13,6 +13,7 @@ STEP 4:- Activate the Virtual Environment
         .\myenv\Scripts\Activate
 
 STEP 5:- Install Django
+	pip install django faker djangorestframework pillow	/ 
         pip Install Django
 	pip install faker
         pip install djangorestframework

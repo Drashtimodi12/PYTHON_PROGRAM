@@ -15,6 +15,8 @@
     <script>
         $(document).ready(function(){
             // alert("ok")
+            $("#upbtn").hide();
+
             fetchStudents();
         });
 
@@ -24,10 +26,34 @@
                 // alert(rt);
                 var rows = ""
                 rt.data.map(ele=>{
-                    rows += "<tr><td>"+ele.id+"</td><td>"+ele.name+"</td><td>"+ele.email+"</td><td>"+ele.age+"</td></tr>"
+                    rows += "<tr><td>"+ele.id+"</td><td>"+ele.name+"</td><td>"+ele.email+"</td><td>"+ele.age+"</td><td><button onclick='deletedata("+ele.id+")' class='btn btn-danger'>Delete</button></td><td><button onclick='editdata("+ele.id+")' class='btn btn-primary'>Update</button></td></tr>"
+
                 })
                 // alert(rows);
                 $("#tdata").html(rows);
+            })
+        }
+
+        const deletedata = (sid) => {
+            $.get("/ajaxcrud/deletedata", {sid}, function(rt) {
+                alert(sid);
+                fetchStudents();
+            })
+            
+
+        }
+
+        const editdata = (sid) => {
+            // alert(sid);
+            $.get("/ajaxcrud/databyid", {sid}, function(rt) {
+                // alert(rt.data[0].id);
+                $("#id").val(rt.data[0].id);
+                $("#name").val(rt.data[0].name);
+                $("#email").val(rt.data[0].email);
+                $("#age").val(rt.data[0].age);
+
+                $("#upbtn").show();
+                $("#smbtn").hide();
             })
         }
 
@@ -40,13 +66,49 @@
             // alert(csrfmiddlewaretoken);   
 
             $.post("/ajaxcrud/addstu",{csrfmiddlewaretoken,name,email,age}, function(rt) {
-                // alert(rt);
+                alert(rt);
                 $("#name").val("");
                 $("#email").val("");
                 $("#age").val("");
                 fetchStudents();
             })
         }
+
+        const updatedata = () => {
+            var id = $("#id").val();
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var age = $("#age").val();
+            // alert(name)
+            var csrfmiddlewaretoken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+            // alert(csrfmiddlewaretoken);   
+
+            $.post("/ajaxcrud/updatedata",{csrfmiddlewaretoken,id,name,email,age}, function(rt) {
+                alert(rt);
+                $("#id").val("");
+                $("#name").val("");
+                $("#email").val("");
+                $("#age").val("");
+                fetchStudents();
+
+                $("#upbtn").hide();
+                $("#smbtn").show();
+            })
+        }
+
+            const searchdata = (value) => {
+                $.get("/ajaxcrud/searchdata",{value},function(rt){
+                // alert(rt);
+                var rows = ""
+                rt.data.map(ele=>{
+                    rows += "<tr><td>"+ele.id+"</td><td>"+ele.name+"</td><td>"+ele.email+"</td><td>"+ele.age+"</td><td><button onclick='deletedata("+ele.id+")' class='btn btn-danger'>Delete</button></td><td><button onclick='editdata("+ele.id+")' class='btn btn-primary'>Update</button></td></tr>"
+                })
+                // alert(rows);
+                $("#tdata").html(rows);
+            })
+            
+        }
+
     </script>
 
 </head>
@@ -59,7 +121,7 @@
                 <h2>Student Registration</h2>
                 <hr>
                 {% csrf_token %}
-                <!-- input type="hidden" id="id"> -->
+                <input type="hidden" id="id">
                 <div class="form-group">
                     <label for="name">Student Name</label>
                     <input type="text" name="name" id="name" placeholder="Enter Student Name" class="form-control">
@@ -73,14 +135,17 @@
                     <input type="text" name="age" id="age" placeholder="Enter Student Age" class="form-control">
                 </div>
                 <br>
-                <button class="btn btn-success" onclick="addstu()">Submit</button>
+                <button class="btn btn-success" id="smbtn" onclick="addstu()">Submit</button>
+                <br>
+                <button class="btn btn-success" id="upbtn" onclick="updatedata()">Update</button>
             </div>
 
             <div class="col-1"></div>
             <div class="col-6 card p-3 mt-3">
                 <h2>Student Details</h2>
                 <hr>
-                <br>
+                <input type="text" id="search" class="form-control" placeholder="Search by Name" onkeyup="searchdata(value)">
+                <hr>
                 <table class="table">
                     <thead>
                         <tr>
@@ -88,6 +153,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Age</th>
+                            <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody id="tdata">
