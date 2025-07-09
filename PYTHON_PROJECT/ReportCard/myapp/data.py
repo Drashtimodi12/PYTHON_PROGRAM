@@ -23,4 +23,3 @@ def setMarks():
         allsubject = Subject.objects.all()
         for subject in allsubject:
             Marks.objects.create(student=student, subject=subject, marks=random.randint(0, 100))
-
