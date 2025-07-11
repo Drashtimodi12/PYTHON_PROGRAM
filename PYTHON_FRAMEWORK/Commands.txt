@@ -14,7 +14,7 @@ STEP 4:- Activate the Virtual Environment
 
 STEP 5:- Install Django
 	pip install django mysqlclient djangorestframework djangorestframework-simplejwt pillow faker	/ 
-        pip Install Django
+        pip install Django
 	pip install mysqlclient
         pip install djangorestframework
 	pip install djangorestframework-simplejwt
