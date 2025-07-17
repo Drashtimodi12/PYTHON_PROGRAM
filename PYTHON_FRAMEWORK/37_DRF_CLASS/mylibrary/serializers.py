@@ -17,6 +17,10 @@ class BookSerializer(serializers.ModelSerializer):
         fields = '__all__'
         # depth = 1   # Allows nested serialization of related fields/ForeignKey fields
 
+    def vlidate(self, attrs):
+        if attrs['qty'] < 0 :
+            raise serializers.ValidationError("Quantity cannot be negative.")
+
     def to_representation(self, instance):
         representation = super().to_representation(instance)
         representation['author'] = AuthorSerializer(instance.author).data
