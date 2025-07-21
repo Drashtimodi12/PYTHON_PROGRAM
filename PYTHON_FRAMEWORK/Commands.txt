@@ -34,7 +34,65 @@ STEP 8:- Create a Django App
 	2. py .\manage.py startapp AppName
 
 STEP 9:- Add the App to Settings File
-        Main Folder -> ProjectName -> Project -> Settings.py -> INSTALLED_APPS -> 'AppName'
+        Main Folder -> ProjectName -> Project -> Settings.py -> 
+	
+	from datetime import timedelta
+
+	INSTALLED_APPS{ 
+		'rest_framework', 'rest_framework.authtoken', 'AppName'
+	}
+
+	
+	REST_FRAMEWORK = {
+    		'DEFAULT_AUTHENTICATION_CLASSES': 
+		[
+        		'rest_framework.authentication.BasicAuthentication',
+        		'rest_framework.authentication.SessionAuthentication',		OR
+			'rest_framework_simplejwt.authentication.JWTAuthentication'
+    		]
+	}
+
+
+SIMPLE_JWT = 
+{
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": False,
+
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+    "VERIFYING_KEY": "",
+    "AUDIENCE": None,
+    "ISSUER": None,
+    "JSON_ENCODER": None,
+    "JWK_URL": None,
+    "LEEWAY": 0,
+
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
+    "USER_ID_FIELD": "id",
+    "USER_ID_CLAIM": "user_id",
+    "USER_AUTHENTICATION_RULE": "rest_framework_simplejwt.authentication.default_user_authentication_rule",
+
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
+    "TOKEN_TYPE_CLAIM": "token_type",
+    "TOKEN_USER_CLASS": "rest_framework_simplejwt.models.TokenUser",
+
+    "JTI_CLAIM": "jti",
+
+    "SLIDING_TOKEN_REFRESH_EXP_CLAIM": "refresh_exp",
+    "SLIDING_TOKEN_LIFETIME": timedelta(minutes=5),
+    "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
+
+    "TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainPairSerializer",
+    "TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSerializer",
+    "TOKEN_VERIFY_SERIALIZER": "rest_framework_simplejwt.serializers.TokenVerifySerializer",
+    "TOKEN_BLACKLIST_SERIALIZER": "rest_framework_simplejwt.serializers.TokenBlacklistSerializer",
+    "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainSlidingSerializer",
+    "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
+}
 
 
 	DATABASES = {
@@ -49,7 +107,6 @@ STEP 9:- Add the App to Settings File
 	}
 
 
-
 	# The directory where static files are collected
 	STATICFILES_DIRS = [
     		BASE_DIR / 'static',
@@ -60,10 +117,23 @@ STEP 9:- Add the App to Settings File
 	MEDIA_URL = '/media/'
 	MEDIA_ROOT = BASE_DIR / 'media'
 
-STEP 10:- Copy urls.py for AppName
+STEP 10:- Views.py For Authentication django rest framework
+	views.py -> api secure karva mate
+	from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+	from rest_framework.permissions import IsAuthenticated						OR
+	from rest_framework_simplejwt.authentication import JWTAuthentication
+	from rest_framework.permissions import IsAuthenticated
+
+	authentication_classes = [SessionAuthentication, BasicAuthentication]
+	permission_classes = [IsAuthenticated]						OR
+	authentication_classes = [JWTAuthentication]
+    	permission_classes = [IsAuthenticated]
+
+
+STEP 11:- Copy urls.py for AppName
         Main Folder -> ProjectName -> Project -> Copy urls.py -> Paste On -> AppName -> urls.py
 
-STEP 11:- Changes in Project urls.py
+STEP 12:- Changes in Project urls.py
             from django.contrib import admin
             from django.urls import path, include
 
@@ -72,15 +142,22 @@ STEP 11:- Changes in Project urls.py
                 path('',include("myapp.urls"))
             ]
 
-STEP 12:- Changes in AppName urls.py
+STEP 13:- Changes in AppName urls.py
             from django.contrib import admin
             from django.urls import path
             from myapp.views import *
 	    from django.conf import settings
 	    from django.conf.urls.static import static
+	    from rest_framework.authtoken import views			OR
+	    from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
 
             urlpatterns = [
-                path('',home,name='home')
+                path('',home,name='home'),
+
+		path('api-token-auth/', views.obtain_auth_token), 			OR
+
+    		path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    		path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
             ]
 
 	    if settings.DEBUG:
@@ -89,34 +166,34 @@ STEP 12:- Changes in AppName urls.py
 
 		
 
-STEP 13:- Create templates folder for html File
+STEP 14:- Create templates folder for html File
         Main Folder -> ProjectName -> AppName -> Create Folder templates
 
-STEP 14:- Create data.py file for fake data
+STEP 15:- Create data.py file for fake data
         Main Folder -> ProjectName -> AppName -> Create file data.py
 
-STEP 15:- Create serializer.py file for ..........
+STEP 16:- Create serializer.py file for ..........
         Main Folder -> ProjectName -> AppName -> Create file serializer.py
 
-STEP 16:- Create Static Folder for CSS, IMG, JS
+STEP 17:- Create Static Folder for CSS, IMG, JS
         Main Folder -> ProjectName -> Create Folder Static
 
-STEP 17:- Run Makemigrations. It's like creating blueprint for database changes
+STEP 18:- Run Makemigrations. It's like creating blueprint for database changes
         py .\manage.py makemigrations
 
-STEP 18:- Run Migrate. This actually applies changes to the Datatbase.
+STEP 19:- Run Migrate. This actually applies changes to the Datatbase.
         py .\manage.py Migrate
 
-STEP 17:- Create an admin (superuser) account
+STEP 20:- Create an admin (superuser) account
         py .\manage.py createsuperuser
 
-STEP 19:- Define Models(Creat Table) 
+STEP 21:- Define Models(Creat Table) 
         Main Folder -> ProjectName -> AppName -> models.py -> Create Tables
 	
 	from django.contrib.auth.models import User
 	from django.db import models
 
-STEP 20:- convert all venv library file in one file
+STEP 22:- convert all venv library file in one file
 	pip freeze > requirements.txt
 
 
@@ -220,7 +297,7 @@ Course.objects.annotate(student_count=Count('student'))
 raw():
 Student.objects.raw('SELECT * FROM app_student')
 
-
+-------------------------------------------------------------------------------------------------------------------------------------
 
 (myenv) PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\30_Static_Models_ORM\Project> py .\manage.py shell
 8 objects imported automatically (use -v 2 for details).
@@ -299,19 +376,7 @@ Student object (22)>, <Student: Student object (4)>, <Student: Student object (5
 
 
 
-
-
-(myenv) PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\30_Static_Models_ORM> pip install faker
-  Using cached faker-37.4.0-py3-none-any.whl (1.9 MB)
-Requirement already satisfied: tzdata in c:\python_program\python_framework\30_static_models_orm\myenv\lib\site-packages (from faker) (2025.2)
-Installing collected packages: faker
-Successfully installed faker-37.4.0
-
-[notice] A new release of pip available: 22.2.2 -> 25.1.1
-[notice] To update, run: python.exe -m pip install --upgrade pip
-
-
-
+-------------------------------------------------------------------------------------------------------------------------------------
 (myenv) PS C:\PYTHON_PROGRAM\PYTHON_FRAMEWORK\30_Static_Models_ORM\Project> py .\manage.py shell
 Python 3.10.7 (tags/v3.10.7:6cc6b13, Sep  5 2022, 14:08:36) [MSC v.1933 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
@@ -322,30 +387,18 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
 
+-------------------------------------------------------------------------------------------------------------------------------------
+Token Authentication Link:- https://www.django-rest-framework.org/api-guide/authentication/#setting-the-authentication-scheme
+Simple JWT Token:- https://django-rest-framework-simplejwt.readthedocs.io/en/latest/settings.html,
+			https://medium.com/django-unleashed/securing-django-rest-apis-with-jwt-authentication-using-simple-jwt-a-step-by-step-guide-28efa84666fe
+Check Token:- https://jwt.io/
 
 
 
+-------------------------------------------------------------------------------------------------------------------------------------
+SMS:- https://www.fast2sms.com/dashboard/quick
 
-from django.db import models
-from django.contrib.auth.models import User
 
-# Create your models here.
 
-class Category(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    category_image = models.ImageField(upload_to='categories/', blank=True)
-
-    def __str__(self):
-        return f"{self.id} | {self.name} | {self.category_image} | {self.description}"
-    
-class Product(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    stock = models.PositiveIntegerField(default=0)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
-    product_image = models.ImageField(upload_to='products/', blank=True)
-
-    def __str__(self):
-        return f"{self.id} | {self.name} | {self.description} | {self.price} | {self.stock} | {self.category} | {self.product_image}"
+-------------------------------------------------------------------------------------------------------------------------------------
+Payment Gateway:- 
