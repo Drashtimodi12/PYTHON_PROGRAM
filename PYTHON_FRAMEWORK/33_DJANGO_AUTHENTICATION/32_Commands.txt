@@ -22,7 +22,7 @@ Requirement already satisfied: asgiref>=3.8.1 in c:\python_program\python_framew
 Requirement already satisfied: sqlparse>=0.3.1 in c:\python_program\python_framework\32_django_authentication\myenv\lib\site-packages (from django>=4.2->djangorestframework) (0.5.3)
 ramework) (2025.2)
 Requirement already satisfied: typing-extensions>=4 in c:\python_program\python_framework\32_django_authentication\myenv\lib\site-packages (from asgiref>=3.8.1->django>=4.2->djangorestframework) (4.14.0)
-Installing collected packages: djangorestframework
+Installing collected packages: 
 Successfully installed djangorestframework-3.16.0
 
 [notice] A new release of pip available: 22.2.2 -> 25.1.1

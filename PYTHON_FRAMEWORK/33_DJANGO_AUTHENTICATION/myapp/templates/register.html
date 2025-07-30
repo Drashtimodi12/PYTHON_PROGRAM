@@ -26,7 +26,7 @@
                 {% endif %}
 
 
-                <form action="{% url 'adduser' %}" method="post">
+                <form action="{% url 'adduser' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                     <div class="form-group">
                         <label for="fname">First Name</label>
