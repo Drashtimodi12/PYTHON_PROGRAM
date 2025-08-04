@@ -1,4 +1,5 @@
-#  Identity Operator: is, is not
+# Identity Operator: is, is not
+# The identity operators `is` and `is not` are used to compare the memory locations of two objects.
 
 # 1. Using `is` operator
 a = 10

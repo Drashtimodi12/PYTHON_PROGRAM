@@ -4,10 +4,10 @@ number = int(input("Enter a number: "))  # Taking user input
 fact = 1
 
 for i in range(number, 0, -1):  # Loop from number to 1
-    fact *= i
+    a = fact * i  # Multiply fact by i
 
 # Using f-string
-print(f"Factorial of {number} is {fact}")
+print(f"Factorial of {number} is {a}")
 
 # Output:
 # Enter a number: 5

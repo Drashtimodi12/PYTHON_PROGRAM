@@ -17,13 +17,14 @@ print(a + b)  # Adds two numbers and prints the result
 print(int(a) + int(b))  # Another way of addition (redundant type conversion)
 
 
-# # Type conversion example
-# c = "100"  # String value
-# # d = "100O"  # Invalid integer (contains letter 'O')
-# # e = int(a)  # This would raise a ValueError since "100O" is not a valid integer
+# Type conversion example
+c = "100"  # String value
+d = int(c)  # This line will work fine
+print(type(d))  # Output: <class 'str'>
 
-# print(type(c))  # Output: <class 'str'>
-# # print(type(d))  # This line will not execute due to the error above
+# e = "100O"  # Invalid integer (contains letter 'O')
+# f = int(e)  # This line will raise an error
+# print(type(f))  # Output: <class 'str'> (but will not execute due to error)
 
 
 # String split example

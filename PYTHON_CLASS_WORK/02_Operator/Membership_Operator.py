@@ -1,4 +1,5 @@
 # Membership Operator: in, Not in
+# used to check if a value exists in a sequence (like strings, lists, tuples) or keys in a dictionary.
 
 # 1. Using `in` with a string
 text = "Hello Python"

@@ -10,9 +10,11 @@ print('1. Addition (+)')
 print('2. Subtraction (-)')
 print('3. Multiplication (*)')
 print('4. Division (/)')
+print('5. Modulus (%)')
+print('6. Exit')
 
 # Taking user choice
-choice = int(input('Enter choice (1/2/3/4): '))
+choice = int(input('Enter choice (1/2/3/4/5/6): '))
 
 # Performing basic operations
 if choice == 1:
@@ -26,7 +28,14 @@ elif choice == 4:
         print("Division:", num1 / num2)
     else:
         print("Error! Cannot divide by zero.")
+elif choice == 5:
+    if num2 != 0:
+        print("Modulus:", num1 % num2)
+    else:
+        print("Error! Cannot divide by zero.")
+elif choice == 6:
+    print("Exiting the calculator.")
 else:
-    print("Invalid choice! Please enter a number between 1 and 4.")
+    print("Invalid choice! Please enter a valid option.")
 
 

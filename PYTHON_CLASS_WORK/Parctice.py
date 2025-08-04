@@ -1,18 +1,46 @@
-s = "Hello World"
+row = 4
+for i in range(1, row+1):
+    print("* " *i)
 
-t = s.split()
-print(t)
-u = (t[::-1])
-print(u)
-text = ' '.join(u)
-print(text)
+print("-----")
 
+for i in range(row, 0, -1):
+    print("* "*i)
 
-# Things to Prepare for the Practical Interview:
+print("-----")
 
-# 1. MongoDB or PostgreSQL – Be comfortable working with either database, including writing queries, performing joins (for PostgreSQL), and understanding schema design and indexing.
-# 2. REST API Usage – Review how to create and consume RESTful APIs. Be familiar with common HTTP methods (GET, POST, PUT, DELETE), status codes, and authentication mechanisms (e.g., JWT, API keys).
-# 3. Python Libraries (PDF, DOC, etc.) – Practice using Python libraries such as:
-# - PyPDF2 or pdfplumber – for reading PDF files
-# - reportlab or FPDF – for generating PDF files
-# - python-docx – for reading/writing Word documents
+for i in range(1, row+1):
+    print("  "*(row-i), "* "*i)
+
+print("-----")
+
+for i in range(row, 0, -1):
+    print("  "*(row-i), "* "*i)
+
+print("-----")
+
+for i in range(1, row+1):
+    print(" "*(row-i), "* "*i)
+
+print("-----")
+
+for i in range(row, 0, -1):
+    print(" "*(row-i), "* "*i)
+
+print("-----")
+
+for i in range(1, row+1):
+    print("  "*(row-i), "* "*(2*i-1))
+
+print("-----")
+
+for i in range(row, 0, -1):
+    print("  "*(row-i), "* "*(2*i-1))
+    
+print("-----")
+
+for i in range(1, row+1):
+    print("  "*(row-i), "* "*(2*i-1))
+
+for i in range(row-1, 0, -1):
+    print("  "*(row-i), "* "*(2*i-1))

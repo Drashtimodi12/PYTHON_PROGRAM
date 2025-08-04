@@ -9,11 +9,13 @@ STEP 2:- Go to Terminal
 STEP 3:- Create Virtual Environment with name
         py -m venv myenv
 
+	:- Delete the old virtual environment:-		Remove-Item -Recurse -Force .\myenv
+
 STEP 4:- Activate the Virtual Environment
         .\myenv\Scripts\Activate
 
 STEP 5:- Install Django
-	pip install django mysqlclient djangorestframework djangorestframework-simplejwt pillow faker	/ 
+	pip install django djangorestframework djangorestframework-simplejwt pillow faker mysqlclient	/ 
         pip install Django
 	pip install mysqlclient
         pip install djangorestframework
