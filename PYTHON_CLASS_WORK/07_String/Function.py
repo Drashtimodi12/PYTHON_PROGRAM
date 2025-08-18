@@ -80,3 +80,8 @@ print(words[4:9:3])  # Output: 'R ' (Characters at index 4 and 7)
 
 # Slicing from the fourth-last to the second-last character
 print(words[-4:-1])  # Output: 'eas'
+
+
+s1 = "Hello"
+s2 = "World"
+print(s1 + " " + s2)    # Output: "Hello World"

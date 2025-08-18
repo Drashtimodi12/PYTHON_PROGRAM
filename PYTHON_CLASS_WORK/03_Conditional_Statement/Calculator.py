@@ -34,7 +34,7 @@ elif choice == 5:
     else:
         print("Error! Cannot divide by zero.")
 elif choice == 6:
-    print("Exiting the calculator.")
+    print("Exit the calculator.")
 else:
     print("Invalid choice! Please enter a valid option.")
 

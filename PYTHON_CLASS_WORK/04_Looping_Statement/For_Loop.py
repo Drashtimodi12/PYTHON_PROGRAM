@@ -1,3 +1,10 @@
+# Loop through elements of a list
+l = [10,3,40,6,33,50]
+for i in l :
+    print(i)    # Output: 10,3,40,6,33,50
+
+print("------------")  # Separator for clarity
+
 # Loop from 0 to 9 (10 numbers)
 for i in range(10) :
     print(i)    # Output: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
@@ -24,11 +31,4 @@ print("------------")  # Separator for clarity
 
 # Loop from 10 down to 1 (Decrementing by -1)
 for i in range(10,0,-1) :
-    print(i)    # Output: 10, 9, 8, 7, 6, 5, 
-
-print("------------")  # Separator for clarity
-
-# Loop through elements of a list
-l = [10,3,40,6,33,50]
-for i in l :
-    print(i)    # Output: 10,3,40,6,33,50
+    print(i)    # Output: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 

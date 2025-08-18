@@ -20,7 +20,7 @@ print(int(a) + int(b))  # Another way of addition (redundant type conversion)
 # Type conversion example
 c = "100"  # String value
 d = int(c)  # This line will work fine
-print(type(d))  # Output: <class 'str'>
+print(type(d))  # Output: <class 'int'>
 
 # e = "100O"  # Invalid integer (contains letter 'O')
 # f = int(e)  # This line will raise an error
