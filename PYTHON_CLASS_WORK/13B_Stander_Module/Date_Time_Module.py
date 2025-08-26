@@ -8,3 +8,8 @@ print(d)              # Prints current date and time
 print(d.day)          # Extracts the current day
 print(d.year)         # Extracts the current year
 print(d.hour)         # Extracts the current hour
+
+# Output:
+# 19
+# 2025
+# 9

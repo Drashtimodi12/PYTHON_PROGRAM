@@ -26,6 +26,9 @@ print(type(d))  # Output: <class 'int'>
 # f = int(e)  # This line will raise an error
 # print(type(f))  # Output: <class 'str'> (but will not execute due to error)
 
+# id function example
+A = 10
+print(id(A))  # Output: e.g: 140726123456000 (memory address of the variable A)
 
 # String split example
 name = "Tops technologies pvt ltd".split()      # Splitting the string into a list based on spaces
@@ -34,6 +37,9 @@ print(name)     # Output: ['Tops', 'technologies', 'pvt', 'ltd']
 name = "Tops technologies pvt ltd".split("o")   # Splitting the string where the letter 'o' appears
 print(name)     # Output: ['T', 'ps techn', 'l', 'gies pvt ltd']
 
+# length of the string
+name = "Tops technologies pvt ltd"
+print(len(name))  # Output: 30 (total number of characters including spaces)
 
 # String formatting example
 fname = "Farukh"

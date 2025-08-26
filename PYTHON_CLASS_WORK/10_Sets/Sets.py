@@ -1,5 +1,5 @@
 # Set:- Sets are used to store multiple items in a single variable. Sets are written with curly brackets.
-# A set is a collection which is unordered, unchangeable(but allows adding/removing items), and do not allow duplicate values..
+# A set is a collection which is unordered, unchangeable, and do not allow duplicate values..
 # Set items are unchangeable, but you can remove items and add new items.
 
 # Creating a Set:- You can create a set using {} or the set() constructor.

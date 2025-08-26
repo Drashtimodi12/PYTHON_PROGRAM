@@ -404,3 +404,18 @@ SMS:- https://www.fast2sms.com/dashboard/quick
 
 -------------------------------------------------------------------------------------------------------------------------------------
 Payment Gateway:- 
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Email Sending:- https://www.geeksforgeeks.org/python/setup-sending-email-in-django-project/
+Settings.py :-  EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+		EMAIL_HOST = "smtp.gmail.com"
+		EMAIL_USE_TLS = True
+		EMAIL_PORT = 587
+		EMAIL_HOST_USER = "drashtimodi33@gmail.com"
+		EMAIL_HOST_PASSWORD = "wrcc oumk hwcx tjwj"
+EMAIL_HOST_PASSWORD:- Google Account Security -> 2-Step Verification is turned on
+		   :- Security -> App passwords -> Google will generate a 16-character password.
+
+	

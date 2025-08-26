@@ -21,6 +21,7 @@ print(len(mytuple))      # Output: 5
 mytuple = ("apple",)
 print("Tuple with one element:", mytuple)       # Output: Tuple with one element: ('apple',)
 print(type(mytuple))      # Output: <class 'tuple'>
+
 # Without a comma, it's just a string
 a = ("apple")         #This is not tuple
 print("List with one element:", a)         # Output: List with one element: apple

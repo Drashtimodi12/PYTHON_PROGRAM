@@ -53,9 +53,4 @@ q = p[::-1]  # Output: ['Python', 'hello']
 print(q.sep(' '))  # Output: 'Python hello'
 
 
-import copy
-lst = [[1], [2]]
-shallow = lst[:]
-print(shallow)  # Output: [[1], [2]]
-deep = copy.deepcopy(lst)   
-print(deep)  # Output: [[1], [2]]
+l = ['apple', 'banana', 'cherry']

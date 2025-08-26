@@ -3,11 +3,14 @@
 number = int(input("Enter a number: "))  # Taking user input
 fact = 1
 
-for i in range(number, 0, -1):  # Loop from number to 1
-    a = fact * i  # Multiply fact by i
+if number < 0:
+    print("Factorial is not defined for negative numbers.")
+else:
+    for i in range(number, 0, -1):  # Loop from number to 1
+        fact *= i  # Multiply fact by i
 
 # Using f-string
-print(f"Factorial of {number} is {a}")
+print(f"Factorial of {number} is {fact}")
 
 # Output:
 # Enter a number: 5

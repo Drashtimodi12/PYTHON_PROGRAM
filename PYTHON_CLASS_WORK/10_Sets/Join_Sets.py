@@ -1,7 +1,7 @@
 # Join Sets:- There are several ways to join two or more sets in Python.
 # Both union() and update() will exclude any duplicate items.
 
-# 1.    Union():- The union() method returns a new set with all items from both sets. We can also us ewith different data types.
+# 1.    Union():- The union() method returns a new set with all items from both sets. We can also usE with different data types.
 s1 = {"java", "python", "php", "html"}
 s2 = {"a", "b", "c"}
 s4 = s1.union(s2)

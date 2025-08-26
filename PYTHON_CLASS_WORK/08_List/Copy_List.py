@@ -6,10 +6,6 @@ mylist = ["apple", "banana", "cherry"]
 newlist = mylist.copy()
 print(newlist)       # Output: ['apple', 'banana', 'cherry']
 
-mylist = ["apple", "banana", "cherry"]
-k = mylist.copy()
-print(newlist)       # Output: ['apple', 'banana', 'cherry']
-
 # list():- Another way to make a copy is to use the built-in method list().
 mylist = ["apple", "banana", "cherry"]
 newlist = list(mylist)

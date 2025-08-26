@@ -11,7 +11,7 @@ print(yellow)
 
 # Unpacking with Asterisk(*):- When we have more values than variables, we use * to collect multiple values into a list.
 mytuple = ("apple", "banana", "cherry", "strawberry", "raspberry")      
-(green, red, *yellow) = mytuple
+green, red, *yellow = mytuple
 print(green)
 print(red)
 print(yellow)

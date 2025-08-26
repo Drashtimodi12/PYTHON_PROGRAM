@@ -10,12 +10,11 @@ def test() :
     print(a)        # Output: 70 (local scope)
 
 print("Before: ", a)        # Output: before: 20 (global scope)
-test()
+test()                      # Local variable 'a' inside test() does not affect the global 'a'
 print("After: ", a)         # Output: after: 20 (global scope)
 
 
 # global Keyword → Needed if you want to modify a global variable inside a function.
-
 a = 20      # Global Variable
 
 def test() :

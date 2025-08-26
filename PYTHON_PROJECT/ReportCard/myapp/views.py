@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from myapp.models import *
+from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Paginator is a class that provides pagination functionality for a queryset, allowing you to split large datasets 
 # into smaller, manageable pages.  link: https://docs.djangoproject.com/en/5.2/topics/pagination/
@@ -46,3 +49,31 @@ def marksheet(request):
             break
             
     return render(request, 'marksheet.html', {"students":allstudent, "sum":sum, "count":count})
+
+
+# Gmail sending code 
+# link:- https://www.geeksforgeeks.org/python/setup-sending-email-in-django-project/
+def send_mail_page(request):
+    context = {}
+
+    if request.method == 'GET':
+        # address = request.POST.get('address')
+        # subject = request.POST.get('subject')
+        # message = request.POST.get('message')
+
+        address = "drashtimodi33@gmail.com" 
+        subject = "Test Email from Django"
+        message = "This is a test email sent from a Django application."
+
+        # print(settings.EMAIL_HOST_USER)
+        
+        if address and subject and message:
+            try:
+                send_mail(subject, message, settings.EMAIL_HOST_USER, [address])
+                context['result'] = 'Email sent successfully'
+            except Exception as e:
+                context['result'] = f'Error sending email: {e}'
+        else:
+            context['result'] = 'All fields are required'
+    
+    return HttpResponse(context['result'])

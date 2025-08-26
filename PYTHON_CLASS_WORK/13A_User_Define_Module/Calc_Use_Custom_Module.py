@@ -3,3 +3,4 @@
 import Calc as C
 
 print(C.add(10, 20))    # Using add function from Calc module
+#  Output: 30
