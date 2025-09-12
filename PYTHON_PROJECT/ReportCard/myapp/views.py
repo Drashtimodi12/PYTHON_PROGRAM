@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from myapp.models import *
 from django.http import HttpResponse
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
 from django.conf import settings
 
 # Paginator is a class that provides pagination functionality for a queryset, allowing you to split large datasets 
@@ -54,26 +55,29 @@ def marksheet(request):
 # Gmail sending code 
 # link:- https://www.geeksforgeeks.org/python/setup-sending-email-in-django-project/
 def send_mail_page(request):
-    context = {}
-
-    if request.method == 'GET':
-        # address = request.POST.get('address')
-        # subject = request.POST.get('subject')
-        # message = request.POST.get('message')
-
-        address = "drashtimodi33@gmail.com" 
-        subject = "Test Email from Django"
-        message = "This is a test email sent from a Django application."
-
-        # print(settings.EMAIL_HOST_USER)
-        
-        if address and subject and message:
-            try:
-                send_mail(subject, message, settings.EMAIL_HOST_USER, [address])
-                context['result'] = 'Email sent successfully'
-            except Exception as e:
-                context['result'] = f'Error sending email: {e}'
-        else:
-            context['result'] = 'All fields are required'
+    id = int(request.GET['id'])
     
-    return HttpResponse(context['result'])
+    allstudent = Marks.objects.filter(student_id=id)
+    # print(allstudent[0].student.email)
+
+    sum = allstudent.aggregate(total = Sum("marks"))
+    
+    rankstudents = Student.objects.annotate(total = Sum('marks__marks')).order_by("-total")
+    count = 0
+    for ranks in rankstudents:
+        count += 1
+        if ranks.id == id:
+            # print(ranks.total, ranks.id, count)
+            break
+
+    subject = "Report Card"
+    from_email = settings.EMAIL_HOST_USER
+    to_email = [allstudent[0].student.email] 
+
+    html_content = render_to_string('marksheet.html', {"students":allstudent, "sum":sum, "count":count})
+
+    email = EmailMultiAlternatives(subject, '', from_email, to_email)
+    email.attach_alternative(html_content, "text/html")
+    email.send()
+
+    return redirect("index")

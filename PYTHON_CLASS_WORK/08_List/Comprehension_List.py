@@ -55,3 +55,10 @@ print(newlist)          #Output: ['hello', 'hello', 'hello', 'hello', 'hello']
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 newlist = [x if x != 'banana' else 'orange' for x in fruits]
 print(newlist)          #Output: ['apple', 'orange', 'cherry', 'kiwi', 'mango']
+
+# start name with a
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+for i in fruits:
+    if i.startswith('a'):
+        print(i)
+    

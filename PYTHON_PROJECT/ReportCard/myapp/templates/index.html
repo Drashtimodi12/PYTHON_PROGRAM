@@ -42,7 +42,8 @@
                         <td><a href="{% url 'marksheet' %}?id={{std.id}}" class="btn btn-primary btn-sm">{{std.stid}}</a></td>
                         <!-- <td>{{std.stid.stid}}</td> -->
                         <td>{{std.name}}</td>
-                        <td>{{std.email}}</td>
+                        <!-- <td>{{std.email}}</td> -->
+                        <td><a href="{% url 'send_mail_page' %}?id={{std.id}}" style="color: blue; text-decoration: underline;">{{std.email}}</a></td>
                         <td>{{std.age}}</td>
                         <td>{{std.dept}}</td>
                         <!-- <td>{{std.dept.name}}</td> -->

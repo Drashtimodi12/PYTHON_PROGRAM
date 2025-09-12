@@ -39,7 +39,7 @@ print(name)     # Output: ['T', 'ps techn', 'l', 'gies pvt ltd']
 
 # length of the string
 name = "Tops technologies pvt ltd"
-print(len(name))  # Output: 30 (total number of characters including spaces)
+print(len(name))  # Output: 25 (total number of characters including spaces)
 
 # String formatting example
 fname = "Farukh"

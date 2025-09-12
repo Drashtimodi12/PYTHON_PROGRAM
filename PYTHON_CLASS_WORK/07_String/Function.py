@@ -34,6 +34,9 @@ print(s1.split("s"))     # Output: ['', 'un Ri', 'e', ' in ea', 't']
 words = ["Python", "is", "fun"]
 print(" ".join(words))      # Output: "Python is fun"
 
+# Joins the given string "123" with "Hello" between each character
+print("Hello".join("123"))  # Output: "1Hello2Hello3"
+
 # Searches for 'k' in the substring from index 3 to 9; returns -1 if not found
 print(s1.find('k', 3, 9))  # Output: -1 (since 'k' is not present)
 print(s1.find('s', 3, 9))  # Output: 5 (index of 's' in the substring)
@@ -111,5 +114,3 @@ print("Tbc".istitle())  # Output: True
 # Checks if all characters are uppercase
 print("ABC".isupper())  # Output: True
 
-# Joins the given string "123" with "Hello" between each character
-print("Hello".join("123"))  # Output: "1Hello2Hello3"
