@@ -1,14 +1,2 @@
-Hello PYTHON
 
-Mode - Description
-"r"	- Read mode. Error if the file does not exist.
-"w"	- Write mode. Overwrites existing content or creates a new file.
-"a"	- Append mode. Adds new content without deleting existing data.
-"x"	- Create mode. Creates a new file but gives an error if it already exists.
-"r+" - Read & write mode. File must exist.
-"w+" - Write & read mode. Overwrites existing file.
-"a+" - Append & read mode. Adds new content & allows reading.
-
-Delete a File:- 
-To delete a file, you must import the OS module, and run its os.remove() function:
-To delete an entire folder, use the os.rmdir() method:
+      Hello PYTHON

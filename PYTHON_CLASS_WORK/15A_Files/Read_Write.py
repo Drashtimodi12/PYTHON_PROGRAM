@@ -10,4 +10,4 @@ with open("Test.txt", "w+") as file:
 
 # Output:
 # Test.txt ---Create new file and write
-# Hello PUTHON
+# Hello PYTHON

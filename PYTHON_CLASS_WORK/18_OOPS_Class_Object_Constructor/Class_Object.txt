@@ -1,5 +1,7 @@
 ------------Example 1: Class and Object with Constructor & Attributes---------------
 In this example, we define a class Student that initializes attributes using a constructor (__init__).
+
+
 # Define a class named Student
 class Student:
     # Constructor to initialize student details
