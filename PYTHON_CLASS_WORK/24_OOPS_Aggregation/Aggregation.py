@@ -9,4 +9,4 @@ class Demo:
 # Create an instance of Demo
 d = Demo()
 # Access the Sample instance through the Demo instance and call the show method
-d.s.show()
+d.s.show()  

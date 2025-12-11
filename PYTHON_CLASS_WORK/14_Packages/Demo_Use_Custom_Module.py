@@ -1,7 +1,7 @@
 # 1. package example 
 
-# from CreateFunction import Msg
-# Msg.msg()
+from CreateFunction import Msg
+Msg.msg()
 
 # 2. package example 
 

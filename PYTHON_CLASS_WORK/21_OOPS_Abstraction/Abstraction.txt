@@ -1,4 +1,4 @@
-Abstraction is one of the fundamental principles of Object-Oriented Programming (OOP). It is the concept of hiding 
+Abstraction is one of the fundamental principles of OOP. It is the concept of hiding 
 the complex implementation details and showing only the essential features of an object. The main aim of abstraction 
 is to separate the interface from the implementation, allowing the user to interact with the object without needing 
 to understand the internal workings.

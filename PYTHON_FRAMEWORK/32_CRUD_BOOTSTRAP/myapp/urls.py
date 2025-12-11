@@ -27,4 +27,5 @@ urlpatterns = [
     path('delete', delete, name='delete'),
 ]
 
+# This allows Django to serve uploaded media files (like images) during development
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
